@@ -7,16 +7,16 @@ QUnit.module('Render Fruit');
 test('renders a fruit', assert => {
     // arrange
     const apple = {
-        code: 'apple',
+        id: 'apple',
         name: 'Red Apple',
-        image: 'assets/apple.png',
+        image: 'apple.png',
         description: 'A sweet, delicious, forbidden-to-some treat',
         category: 'tree-fruit',
         price: 1.00,
         cost: 0.25
     };
     
-    const expected = '<li class="tree-fruit" title="A sweet, delicious, forbidden-to-some treat"><h3>Red Apple</h3><img src="assets/apple.png" alt="Red Apple image"><p class="price">$1.00<button value="apple">Add</button></p></li>';
+    const expected = '<li class="tree-fruit" title="A sweet, delicious, forbidden-to-some treat"><h3>Red Apple</h3><img src="../assets/apple.png" alt="Red Apple image"><p class="price">$1.00<button value="apple">Add</button></p></li>';
 
     // act
     const dom = renderFruit(apple);
@@ -28,20 +28,20 @@ test('renders a fruit', assert => {
 
 test('renders an orange', assert => {
     // arrange
-    const apple = {
-        code: 'orange',
+    const orange = {
+        id: 'orange',
         name: 'Orange',
-        image: 'assets/orange.png',
+        image: 'orange.png',
         description: 'Which came first, the color or the fruit?',
         category: 'tree-fruit',
-        price: 1.00,
+        price: .76,
         cost: 0.25
     };
     
-    const expected = '<li class="tree-fruit" title="Which came first, the color or the fruit?"><h3>Orange</h3><img src="assets/orange.png" alt="Orange image"><p class="price">$1.00<button value="apple">Add</button></p></li>';
+    const expected = '<li class="tree-fruit" title="Which came first, the color or the fruit?"><h3>Orange</h3><img src="../assets/orange.png" alt="Orange image"><p class="price">$0.76<button value="orange">Add</button></p></li>';
 
     // act
-    const dom = renderFruit(apple);
+    const dom = renderFruit(orange);
     const html = dom.outerHTML;
     
     // assert
