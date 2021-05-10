@@ -111,3 +111,23 @@ footer {
     }
 
   }
+
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero-image {
+  width: 50%;
+}
+
+/* .image-link {
+  display: block;
+} */
+
+.links {
+  position: absolute;  
+  left: 50%;                        /* horizontal alignment */
+  top: 40px;                         /* vertical alignment */
+  transform: translate(-10%, -50%); /* precise centering; see link below */
+}
